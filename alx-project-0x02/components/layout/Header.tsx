@@ -1,14 +1,25 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header = () => {
+  const router = useRouter();
+
+  const isActive = (path: string) =>
+    router.pathname === path ? 'text-blue-600 font-bold' : 'text-gray-700';
+
   return (
-    <header className="bg-white shadow-md p-4 flex space-x-6">
-      <Link href="/home">
-        <span className="text-blue-600 hover:underline font-medium">Home</span>
-      </Link>
-      <Link href="/about">
-        <span className="text-purple-600 hover:underline font-medium">About</span>
-      </Link>
+    <header className="bg-white shadow p-4">
+      <nav className="flex space-x-4 justify-center">
+        <Link href="/home" className={isActive('/home')}>
+          Home
+        </Link>
+        <Link href="/about" className={isActive('/about')}>
+          About
+        </Link>
+        <Link href="/posts" className={isActive('/posts')}>
+          Posts
+        </Link>
+      </nav>
     </header>
   );
 };

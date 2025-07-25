@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Card from '@/components/common/Card';
 import PostModal from '@/components/common/PostModal';
 import { CardProps } from '@/interfaces';
+import Header from '@/components/layout/Header';
 
 const Home = () => {
   const [cards, setCards] = useState<CardProps[]>([
@@ -14,6 +15,7 @@ const Home = () => {
   const handleAddPost = (newPost: CardProps) => {
     setCards([newPost, ...cards]);
   };
+   <Header />
 
   return (
     <div className="p-8 space-y-6">
