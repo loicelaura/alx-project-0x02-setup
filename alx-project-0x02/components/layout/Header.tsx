@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+<Link href="/users">Users</Link>
+
+
 const Header = () => {
   const router = useRouter();
 
